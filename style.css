@@ -63,6 +63,7 @@ main .add-in-list {
 
 main .todo-list ul{
     background-color: #3535ec;
+    color: #fff;
     padding: 20px;
     list-style: none;
 }

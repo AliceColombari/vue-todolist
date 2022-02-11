@@ -39,14 +39,18 @@ const vue = new Vue(
         },
         methods: {
             // todo aggiunto alla lista
-            addTodo(evento) {
-                this.todos.push(
-                    {
-                        text: this.newtodo,
-                        done: false
-                    }
-                );
-                this.newtodo = "";
+            addTodo() {
+                // creo condizione per aggiunta di todo
+                // pusho nuovo todo solo se inserisco testo altrimenti nulla
+                if (this.newtodo != "") {
+                    this.todos.push(
+                        {
+                            text: this.newtodo,
+                            done: false
+                        }
+                    );
+                    this.newtodo = "";
+                }
             },
             // todo rimosso dalla lista
             removeTodo(index) {

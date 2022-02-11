@@ -27,15 +27,20 @@
             <h3>PASSAGGI PER PROGRAMMARE</h3>
 
             <div class="add-in-list">
-                <input type="text" placeholder="Inserisci un nuovo passaggio">
-                <button>Aggiungi</button>
+                <input type="text" placeholder="Inserisci un nuovo passaggio" v-on:keyup.enter="addTodo" type="text" v-model="newtodo">
+                <button @click="addTodo($event)">Aggiungi</button>
             </div>
 
             <div class="todo-list">
-                <ul>
+                <ul v-if="todos.length > 0">
                     <!-- richiamo classe done per sbarrare gli elementi con done: true -->
-                    <li v-for="element in todos" :class="{'done': element.done}"><span>{{element.text}}</span><i class="fa-solid fa-xmark"></i></li>
+                    <li v-for="(element, indice) in todos" :class="{'done': element.done}"><span>{{element.text}}</span><i @click="removeTodo(indice)" class="fa-solid fa-xmark"></i></li>
                 </ul>
+                <!-- se elimino tutti gli elementi appare testo -->
+                <div v-else>
+                    Non ci sono elementi!
+                </div>
+
             </div>
 
         </main>

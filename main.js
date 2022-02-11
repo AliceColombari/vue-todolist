@@ -13,6 +13,7 @@ const vue = new Vue(
     {
         el: '#app',
         data: {
+            newtodo: "",
             todos: [
                 {
                     text: "Crea una repo su GitHub",
@@ -37,7 +38,20 @@ const vue = new Vue(
             ]
         },
         methods: {
-            
+            // todo aggiunto alla lista
+            addTodo(evento) {
+                this.todos.push(
+                    {
+                        text: this.newtodo,
+                        done: false
+                    }
+                );
+                this.newtodo = "";
+            },
+            // todo rimosso dalla lista
+            removeTodo(index) {
+                this.todos.splice(index, 1);
+            }
         }
     }
 );

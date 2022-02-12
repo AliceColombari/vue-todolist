@@ -1,0 +1,94 @@
+/* common */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0px auto;
+}
+
+/* intestazione */
+header {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+/* corpo centrale */
+main .add-in-list {
+    text-align: center;
+}
+
+main h3 {
+    margin: 50px;
+    font-size: 30px;
+    text-align: center;
+    color: #3535ec;
+}
+
+main .add-in-list {
+    margin: 50px;
+}
+
+.add-in-list input {
+    min-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #3535ec;
+    font-size: 16px;
+}
+
+.add-in-list button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #3535ec;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.add-in-list button:hover {
+    background-color: #00de6b;
+    transition: 1s;
+    cursor: pointer;
+}
+
+main .todo-list ul{
+    background-color: #3535ec;
+    color: #fff;
+    padding: 20px;
+    list-style: none;
+}
+
+main .todo-list li{
+    padding: 10px;
+}
+
+.todo-list li i {
+    float: right;
+    color: #fff;
+}
+
+main .todo-list li:hover {
+    background-color: #00de6b;
+}
+
+main .todo-list li i:hover {
+    color: red;
+}
+
+.done-line {
+    text-decoration: line-through;
+}
+
+.done-none {
+    text-decoration: none;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue To Do List</title>
+    <!-- LINK STYLE -->
+    <link rel="stylesheet" href="style.css">
+    <!-- LINK FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+
+
+
+    <div class="container" id="app">
+          
+        <header>
+            <img class="logo" src="https://coursereport-production.imgix.net/uploads/school/logo/681/original/Pittogramma-RGB-1080-BLUE-circle.png" alt="logo">
+        </header>
+
+
+        <main>
+
+            <h3>PASSAGGI PER PROGRAMMARE</h3>
+
+            <div class="add-in-list">
+                <input type="text" placeholder="Inserisci un nuovo passaggio" v-on:keyup.enter="addTodo" type="text" v-model="newtodo">
+                <button @click="addTodo">Aggiungi</button>
+            </div>
+
+            <div class="todo-list">
+                <ul v-if="todos.length > 0">
+                    <!-- richiamo classe done per sbarrare gli elementi con done: true -->
+                    <li v-for="(element, indice) in todos">
+                        <span @click="barra(indice)" :class="(element.done == true ? 'done-line' : 'done-none')">{{element.text}}</span>
+                        <i @click="removeTodo(indice)" class="fa-solid fa-xmark"></i>
+                    </li>
+                </ul>
+                <!-- se elimino tutti gli elementi appare testo -->
+                <div v-else>
+                    Non ci sono elementi!
+                </div>
+
+            </div>
+
+        </main>
+
+        
+
+        
+
+    </div>
+
+
+
+
+    <!-- LINK VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- LINK JS -->
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
